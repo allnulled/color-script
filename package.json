@@ -1,7 +1,7 @@
 {
   "name": "color-script",
   "version": "1.0.0",
-  "description": "",
+  "description": "Programming language to operate with addition, substraction, multiplication and division using colors and numbers.",
   "main": "dist/color-script.js",
   "scripts": {
     "start": "npx http-server -c-1 docs -o index.1.html",
@@ -12,6 +12,18 @@
     "test": "node test/test.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "allnulled",
+  "license": "WTFPL",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allnulled/color-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allnulled/color-script/issues"
+  },
+  "homepage": "https://github.com/allnulled/color-script#readme"
 }

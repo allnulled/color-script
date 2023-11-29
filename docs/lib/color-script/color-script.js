@@ -72,7 +72,11 @@
          * 
          */
         static numberToHex(number) {
-            return parseInt(number, 10).toString(16);
+            let  hex = parseInt(number, 10).toString(16);
+            if(hex.length < 2) {
+                hex = "0" + hex;
+            }
+            return hex.toUpperCase();
         }
 
         /**
@@ -392,7 +396,7 @@
          * 
          */
         toHexadecimal() {
-            return `#${this.red.toString(16).toUpperCase()}${this.green.toString(16).toUpperCase()}${this.blue.toString(16).toUpperCase()}`;
+            return `#${this.constructor.numberToHex(this.red)}${this.constructor.numberToHex(this.green)}${this.constructor.numberToHex(this.blue)}`;
         }
         
     }

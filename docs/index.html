@@ -32,7 +32,7 @@ window.PaginaDeInicio = Castelog.metodos.un_componente_vue2("PaginaDeInicio",
  + "        </div>"
  + "      </div>"
  + "      <div>"
- + "        <table>"
+ + "        <table style=\"border-collapse: collapse;\">"
  + "          <tr class=\"caja_de_color\" v-for=\"color, color_index in colores\" v-bind:key=\"'color-' + color_index\">"
  + "            <td class=\"indice_de_color\">{{ color_index }}</td>"
  + "            <td class=\"cuadrado_de_color\" :style=\"'background-color:' + color.toRGB()\"></td>"
@@ -100,6 +100,15 @@ mounted() {try {
 this.cm_entrada = CodeMirror.fromTextArea( this.$refs.consola_de_entrada,
 { lineNumbers:true
 } );
+this.cm_entrada.setValue( `<% const color1r = "5A"; %>
+<% const color1g = "05"; %>
+<% const color1b = "05"; %>
+<% const color1 = "#" + color1r + color1g + color1b; %>
+<% const pasos = 5; %>
+<% for(let i = 0; i < 33; i++) { %>
+<%-color1%> + rgb(<%-pasos * i%>, <%-pasos * i%>, <%-pasos * i%>)
+<% } %>
+` );
 } catch(error) {
 console.log(error);
 throw error;
