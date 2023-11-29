@@ -1,0 +1,15 @@
+{
+  "name": "color-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/color-script.js",
+  "scripts": {
+    "build": "npm run build-parser && npm run build-dist",
+    "build-dist": "npx browserify src/color-script.api.js --outfile dist/color-script.js",
+    "build-parser": "npx pegjs src/color-script.parser.pegjs",
+    "test": "node test/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
