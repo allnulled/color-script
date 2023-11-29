@@ -35,14 +35,14 @@ The `color-script` parser follows a simple syntax where:
   - colors are like numbers
   - colors can be represented by rgb format, like `rgb(255, 0, 255)`
   - colors can be represented by hex format, like `#FF00FF`
-
-The `color-script` parser acts as a calculator of multiple color or number operations.
-
-Each operation is separated by a new line.
-
-The allowed operations are: addition `+`, substraction `-`, multiplication `*` and division `/`.
-
-Parenthesys are allowed too.
+  - the `color-script` parser acts as a calculator of multiple color or number operations, where.
+  - each operation is separated by a new line.
+  - The allowed operations are:
+     - addition `+`
+     - substraction `-`
+     - multiplication `*`
+     - division `/`
+     - parenthesys are allowed too `(` `)`.
 
 That is all.
 
