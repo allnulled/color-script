@@ -1,0 +1,33 @@
+h5 {
+    padding: 12px;
+    margin: 0px;
+    background-color: #222;
+    color: white;
+    font-family: Arial;
+    font-size: 12px;
+    text-align: center;
+}
+
+.caja_de_error {
+    background-color: #FF8888;
+    border-radius: 4pt;
+    border: 1px solid #FF4444;
+    margin: 4px;
+    padding: 4px;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.caja_de_error:hover {
+    background-color: #FF7777;
+}
+.caja_de_color {}
+.cuadrado_de_color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4pt;
+}
+.numero_de_color {
+
+}

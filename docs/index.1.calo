@@ -1,0 +1,140 @@
+Ejecutable como documento HTML5
+    con autor allnulled
+    con nombre index
+    con versión 1
+<head>
+    <title>🌐 ColorScript 🌐</title>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="lib/win7/win7.scoped.2.css" />
+    <link rel="stylesheet" type="text/css" href="lib/codemirror/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="lib/theme/theme.css" />
+    <script src="lib/codemirror/codemirror.js"></script>
+    <script src="lib/color-script/color-script.js"></script>
+    <script src="lib/calo/calo.js"></script>
+    <script src="lib/calo/calo.js"></script>
+</head>
+<body><div id="app"></div></body>.
+
+### importo api nativa.
+
+asigno window.PaginaDeInicio como un componente vue2 con nombre "PaginaDeInicio" con plantilla {
+  <div class="PaginaDeInicio Component">
+    <h5>🌐 ColorScript 🌐</h5>
+    <div>
+      <div>
+        <textarea ref="consola_de_entrada"></textarea>
+      </div>
+      <div>
+        <button style="width:100%;" v-on:click="compilar_colores">Compile</button>
+      </div>
+      <div class="caja_de_error" v-if="error" v-on:click="limpiar_error">
+        <div>{{ error.name }}: {{ error.message }}</div>
+        <div v-if="error.location">
+          <div>Position: {{ error.location }}</div>
+        </div>
+        <div v-if="error.expected">
+          <div>Expected: {{ error.expected }}</div>
+        </div>
+      </div>
+      <div>
+        <table>
+          <tr class="caja_de_color" v-for="color, color_index in colores" v-bind:key="'color-' + color_index">
+            <td class="indice_de_color">{{ color_index }}</td>
+            <td class="cuadrado_de_color" :style="'background-color:' + color.toRGB()"></td>
+            <td class="numero_de_color">{{ color.toHexadecimal() }}</td>
+            <td class="numero_de_color">{{ color.toRGB() }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+} con lógica {
+  retorno {
+    propiedad props como {
+      propiedad root como {
+        propiedad type como Object.
+        propiedad required como true.
+      }.
+    }.
+    método data donde {
+      retorno {
+        colores: [],
+        error: undefined
+      }.
+    }.
+    propiedad methods como {
+      método limpiar_error con (error) donde {
+        asigno this.error como undefined.
+        hago this.$forceUpdate(true).
+      }.
+      método gestionar_error con (error) donde {
+        imprimo error.
+        asigno this.error como error.
+        hago this.$forceUpdate(true).
+      }.
+      método compilar_colores donde {
+        creo entrada_original como this.cm_entrada.getValue().
+        creo entrada_aplantillada como this.root.$window.ejs.render(entrada_original).
+        creo ast como this.root.$window.ColorScript.parser.parse(entrada_aplantillada).
+        asigno this.colores como ast.
+        hago this.$forceUpdate(true).
+      } en errores hago this.gestionar_error(error).
+    }.
+    propiedad watch como {}.
+    propiedad computed como {}.
+    método beforeCreate donde {}.
+    método created donde {}.
+    método beforeMount donde {}.
+    método mounted donde {
+      asigno this.cm_entrada como CodeMirror.fromTextArea(this.$refs.consola_de_entrada, {
+        lineNumbers: true
+      }).
+    }.
+    método beforeUpdate donde {}.
+    método updated donde {}.
+    método beforeUnmount donde {}.
+    método unmounted donde {}.
+    método activated donde {}.
+    método deactivated donde {}.
+  }.
+}.
+
+asigno window.App como una aplicación vue2 con nombre "App" con rutas [{
+  propiedad path como "/".
+  propiedad name como "PaginaDeInicio".
+  propiedad component como PaginaDeInicio.
+  propiedad props como {}.
+}] con traducciones {
+    propiedad es como {}.
+    propiedad en como {}.
+    propiedad ca como {}.
+} con plantilla {
+  <div class="App Component Castelog-app win7">
+    <router-view :root="this"></router-view>
+  </div>
+} con estilos {
+    html {}
+    body {}
+    .Component {}
+    .App {}
+} con lógica {
+  retorno {
+    método data donde {
+      retorno {
+        errores: []
+      }.
+    }.
+    propiedad methods como {
+      método gestionar_error con (error) donde {
+        imprimo error.
+        apendizo error en this.errores.
+      }.
+    }.
+    propiedad watch como {}.
+    método beforeMount donde {
+      asigno this.$window como window.
+    }.
+    método mounted donde {}.
+  }.
+} montada en "#app".

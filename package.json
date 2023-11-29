@@ -4,8 +4,10 @@
   "description": "",
   "main": "dist/color-script.js",
   "scripts": {
+    "start": "npx http-server -c-1 docs -o index.1.html",
     "build": "npm run build-parser && npm run build-dist",
-    "build-dist": "npx browserify src/color-script.api.js --outfile dist/color-script.js",
+    "build-ui": "cp docs/index.1.html docs/index.html",
+    "build-dist": "npx browserify src/color-script.api.js --outfile dist/color-script.js && cp dist/color-script.js docs/lib/color-script/color-script.js",
     "build-parser": "npx pegjs src/color-script.parser.pegjs",
     "test": "node test/test.js"
   },

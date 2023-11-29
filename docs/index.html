@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head>
+    <title>🌐 ColorScript 🌐</title>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="lib/win7/win7.scoped.2.css" />
+    <link rel="stylesheet" type="text/css" href="lib/codemirror/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="lib/theme/theme.css" />
+    <script src="lib/codemirror/codemirror.js"></script>
+    <script src="lib/calo/calo.js"></script>
+</head><body><div id="app"></div><script>
+// [castelog:html5izable] ACTIVADO con: {"autor":"allnulled","nombre":"index","version":"1","contenido":{"head":"<head>\n    <title>🌐 ColorScript 🌐</title>\n    <meta charset=\"utf8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"lib/win7/win7.scoped.2.css\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"lib/codemirror/codemirror.css\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"lib/theme/theme.css\" />\n    &gt;script src=\"lib/codemirror/codemirror.js\">&gt;/script>\n    &gt;script src=\"lib/calo/calo.js\">&gt;/script>\n</head>","body":"<body><div id=\"app\"></div></body>"}}
+
+window.PaginaDeInicio = Castelog.metodos.un_componente_vue2("PaginaDeInicio",
+  "<div class=\"PaginaDeInicio Component\">"
+ + "    <h5>🌐 ColorScript 🌐</h5>"
+ + "    <div>"
+ + "      <div>"
+ + "        <textarea ref=\"consola_de_entrada\"></textarea>"
+ + "      </div>"
+ + "    </div>"
+ + "  </div>",
+  function(component) {return { props:{ root:{ type:Object,
+required:true
+}
+},
+data() {try {
+return { 
+};
+} catch(error) {
+console.log(error);
+throw error;
+}
+
+},
+methods:{ 
+},
+watch:{ 
+},
+computed:{ 
+},
+beforeCreate() {
+},
+created() {
+},
+beforeMount() {
+},
+mounted() {try {
+this.cm_entrada = CodeMirror.fromTextArea( this.$refs.consola_de_entrada,
+{ lineNumbers:true
+} );
+} catch(error) {
+console.log(error);
+throw error;
+}
+
+},
+beforeUpdate() {
+},
+updated() {
+},
+beforeUnmount() {
+},
+unmounted() {
+},
+activated() {
+},
+deactivated() {
+}
+};},
+  null);
+window.App = Castelog.metodos.una_aplicacion_vue2(
+  "App",
+  "<div class=\"App Component Castelog-app win7\">"
+ + "    <router-view :root=\"this\"></router-view>"
+ + "  </div>",
+  function(component) {return { data() {try {
+return { 
+};
+} catch(error) {
+console.log(error);
+throw error;
+}
+
+},
+methods:{ 
+},
+watch:{ 
+},
+beforeMount() {try {
+this.$window = window;
+} catch(error) {
+console.log(error);
+throw error;
+}
+
+},
+mounted() {
+}
+};},
+  "html {}\n    body {}\n    .Component {}\n    .App {}\n",
+  {},
+  [ { path:"/",
+name:"PaginaDeInicio",
+component:PaginaDeInicio,
+props:{ 
+}
+} ],
+  { es:{ 
+},
+en:{ 
+},
+ca:{ 
+}
+},
+  "#app");</script></body></html>
